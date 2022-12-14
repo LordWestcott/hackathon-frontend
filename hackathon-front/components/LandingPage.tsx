@@ -16,7 +16,7 @@ export const LandingPage = () => {
             </div>
             <div className="h-[calc(100vh-80px)] flex items-center justify-center">
                 <div className="flex items-center justify-between w-full">
-                    <img className="h-80 w-80" src="/astro_jump.png" alt="astro icon" />
+                    <img className="animate-upDown h-80 w-80" src="/astro_jump.png" alt="astro icon" />
                     <div>
                         <div className="mb-6 px-8">
                             <p className="text-2xl align-center text-center font-semibold text-white">The easiest way to round up your payments and donate to charity!</p>
