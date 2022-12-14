@@ -2,6 +2,7 @@ import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/react/20/solid'
 import Head from 'next/head'
 import Image from 'next/image'
 import GridList from '../components/gridlist'
+import { Fire } from '../components/rivecomponents/Fire'
 import { Rocket } from '../components/rivecomponents/Rocket'
 import Shell from '../components/shell'
 import Table, { TableRow } from '../components/table'
@@ -145,6 +146,7 @@ export default function Home() {
     <>
         <Shell>
           <Rocket/>
+          <Fire active={true} widthPx={50} heightPx={50}/>
           {/* Hi There!
           <Timeline events={timelineevents}/>
           <Table columns={columns} rows={rows} />
