@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 
@@ -11,7 +13,11 @@ module.exports = {
       ...colors,
       donoGreen: '#00CD9C',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-quicksand)', ...fontFamily.sans],
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
