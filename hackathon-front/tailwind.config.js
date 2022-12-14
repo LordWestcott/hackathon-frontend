@@ -11,20 +11,21 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      donoGreen: '#00CD9C',
+      'dono-green': '#00CD9C',
+      'dono-orange': '#ff9700'
     },
     extend: {
       fontFamily: {
         sans: ['var(--font-quicksand)', ...fontFamily.sans],
       },
       keyframes: {
-        upDown: {
+        'up-down': {
           '0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
           '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
         }
       },
       animation: {
-        upDown: 'upDown 2s infinite',
+        'up-down': 'up-down 2s infinite',
       }
     },
   },
