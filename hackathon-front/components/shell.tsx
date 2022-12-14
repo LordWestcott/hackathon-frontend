@@ -13,10 +13,10 @@ import { useRouter } from 'next/router'
 
 //sidebar navigation options
 const navigation = [
-  { name: 'Dashboard', href: 'dashboard', icon: HomeIcon, current: true },
-  { name: 'Leader Board', href: 'leaderboard', icon: UsersIcon, current: false },
-  { name: 'Transactions', href: 'transactions', icon: FolderIcon, current: false },
-  { name: 'Charities', href: 'charities', icon: ChartBarIcon, current: false },
+  { name: 'Dashboard', href: 'dashboard', icon: HomeIcon },
+  { name: 'Leader Board', href: 'leaderboard', icon: UsersIcon },
+  { name: 'Transactions', href: 'transactions', icon: FolderIcon },
+  { name: 'Charities', href: 'charities', icon: ChartBarIcon },
 ]
 
 //navigation options for the user profile button.
@@ -33,6 +33,7 @@ function classNames(...classes: any) {
 export default function Shell({ title, children }: any) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const router = useRouter();
+  console.log(router.route);
   return (
     <>
       <div>
@@ -100,7 +101,7 @@ export default function Shell({ title, children }: any) {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current
+                            ("/" + item.href) === router.route
                               ? 'bg-gray-100 text-gray-900'
                               : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
                             'group flex items-center px-2 py-2 text-base font-medium rounded-md'
@@ -108,7 +109,7 @@ export default function Shell({ title, children }: any) {
                         >
                           <item.icon
                             className={classNames(
-                              item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
+                              ("/" + item.href) === router.route ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
                               'mr-4 flex-shrink-0 h-6 w-6'
                             )}
                             aria-hidden="true"
@@ -152,13 +153,13 @@ export default function Shell({ title, children }: any) {
                       router.push(item.href.toLocaleLowerCase())
                     }}
                     className={classNames(
-                      item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                      ("/" + item.href) === router.route ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
                       'group flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer'
                     )}
                   >
                     <item.icon
                       className={classNames(
-                        item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
+                        ("/" + item.href) === router.route ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
                         'mr-3 flex-shrink-0 h-6 w-6'
                       )}
                       aria-hidden="true"
