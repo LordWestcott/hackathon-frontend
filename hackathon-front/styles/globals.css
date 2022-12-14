@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply px-8 py-4 border-t-2 border-x-2 border-b-4 border-[#0ba47d] bg-dono-green rounded-xl uppercase font-bold text-white hover:bg-[#2AD2A8];
+    }
+
+    .btn-secondary {
+        @apply px-8 py-4 border-t-2 border-x-2 border-b-4 border-[#cc7903] border-t-[#ff9700] border-x-[#ff9700] bg-dono-orange rounded-xl uppercase font-bold text-white hover:bg-[#FFAE39];
+    }
+}
