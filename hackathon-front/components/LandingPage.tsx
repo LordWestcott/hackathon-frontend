@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export const LandingPage = () => {
     return (
         <div className="flex flex-col  bg-[#00CD9C]">
@@ -16,12 +18,12 @@ export const LandingPage = () => {
                 <div className="flex items-center justify-between w-full">
                     <img className="h-80 w-80" src="/astro_jump.png" alt="astro icon" />
                     <div>
-                        <div className="mb-4 px-8">
+                        <div className="mb-6 px-8">
                             <p className="text-2xl align-center text-center font-semibold text-white">The easiest way to round up your payments and donate to charity!</p>
                         </div>
-                        <div className="flex flex-col gap-4 w-full max-w-xs margin-auto">
-                            <button className="px-8 py-4 border-t-2 border-x-2 border-b-4 border-[#cc7903] border-t-[#ff9700] border-x-[#ff9700]  bg-[#ff9700] rounded-xl uppercase font-bold text-white hover:bg-[#FFAE39]" type="button">Get Started</button>
-                            <button className="px-8 py-4 border-t-2 border-x-2 border-b-4 border-[#0ba47d] bg-[#00CD9C] rounded-xl uppercase font-bold text-white hover:bg-[#2AD2A8]" type="button">I already have an account</button>
+                        <div className="flex flex-col gap-4 w-full max-w-xs mx-auto text-center">
+                            <Link href="/dashboard" className="px-8 py-4 border-t-2 border-x-2 border-b-4 border-[#cc7903] border-t-[#ff9700] border-x-[#ff9700]  bg-[#ff9700] rounded-xl uppercase font-bold text-white hover:bg-[#FFAE39]" type="button">Get Started</Link>
+                            <Link href="/dashboard" className="px-8 py-4 border-t-2 border-x-2 border-b-4 border-[#0ba47d] bg-[#00CD9C] rounded-xl uppercase font-bold text-white hover:bg-[#2AD2A8]" type="button">I already have an account</Link>
                         </div>
                     </div>
 
