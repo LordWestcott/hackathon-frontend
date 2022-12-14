@@ -1,7 +1,7 @@
 import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/react/20/solid'
 import Head from 'next/head'
 import Image from 'next/image'
-import GridList from '../components/gridlist'
+import GridList, { GridListItem } from '../components/gridlist'
 import { Coin } from '../components/rivecomponents/Coin'
 import { Rocket } from '../components/rivecomponents/Rocket'
 import Shell from '../components/shell'
@@ -18,7 +18,7 @@ export default function Home() {
       href: '#',
       date: 'Sep 20',
       datetime: '2020-09-20',
-      icon: UserIcon,
+      icon: Coin,
       iconBackground: 'bg-gray-400',
     },
     {
@@ -28,7 +28,7 @@ export default function Home() {
       href: '#',
       date: 'Sep 22',
       datetime: '2020-09-22',
-      icon: HandThumbUpIcon,
+      icon: Coin,
       iconBackground: 'bg-blue-500',
     },
     {
@@ -38,7 +38,7 @@ export default function Home() {
       href: '#',
       date: 'Sep 28',
       datetime: '2020-09-28',
-      icon: CheckIcon,
+      icon: Coin,
       iconBackground: 'bg-green-500',
     },
     {
@@ -48,7 +48,7 @@ export default function Home() {
       href: '#',
       date: 'Sep 30',
       datetime: '2020-09-30',
-      icon: HandThumbUpIcon,
+      icon: Coin,
       iconBackground: 'bg-blue-500',
     },
     {
@@ -58,99 +58,61 @@ export default function Home() {
       href: '#',
       date: 'Oct 4',
       datetime: '2020-10-04',
-      icon: CheckIcon,
+      icon: Coin,
       iconBackground: 'bg-green-500',
     },
   ]
 
-  const columns = [
-    'Col1',
-    'Col2',
-    'Col3',
-    'Col4',
-    'Col5',
-  ]
-
-  const rows: TableRow[] = [
-    [
-      {
-        data: "One",
-        isBold: true,
-      },
-      {
-        data: "Two",
-        isBold: false,
-      },
-      {
-        data: "Three",
-        isBold: false,
-      },
-      {
-        data: "Four",
-        isBold: false,
-      },
-      {
-        data: "Five",
-        isBold: false,
-      },
-    ],
-    [
-      {
-        data: "One",
-        isBold: true,
-      },
-      {
-        data: "Two",
-        isBold: false,
-      },
-      {
-        data: "Three",
-        isBold: false,
-      },
-      {
-        data: "Four",
-        isBold: false,
-      },
-      {
-        data: "Five",
-        isBold: false,
-      },
-    ],
-    [
-      {
-        data: "One",
-        isBold: true,
-      },
-      {
-        data: "Two",
-        isBold: false,
-      },
-      {
-        data: "Three",
-        isBold: false,
-      },
-      {
-        data: "Four",
-        isBold: false,
-      },
-      {
-        data: "Five",
-        isBold: false,
-      },
-    ],
-
+  const lastSixMonths: GridListItem[] = [
+    {
+        title: '£36.21 Donated!',
+        subtitle: "10 day 🔥",
+        bgColor: 'bg-dono-green',
+        boxLetters: 'NOV',
+    },
+    {
+        title: '£36.21 Donated!',
+        subtitle: "10 day 🔥",
+        bgColor: 'bg-dono-green',
+        boxLetters: 'OCT',
+    },
+    {
+        title: '£36.21 Donated!',
+        subtitle: "10 day 🔥",
+        bgColor: 'bg-dono-green',
+        boxLetters: 'SEP',
+    },
+    {
+        title: '£36.21 Donated!',
+        subtitle: "10 day 🔥",
+        bgColor: 'bg-dono-green',
+        boxLetters: 'AUG',
+    },
+    {
+        title: '£36.21 Donated!',
+        subtitle: "10 day 🔥",
+        bgColor: 'bg-dono-green',
+        boxLetters: 'JUL',
+    },
+    {
+        title: '£36.21 Donated!',
+        subtitle: "10 day 🔥",
+        bgColor: 'bg-dono-green',
+        boxLetters: 'JUN',
+    },
   ]
 
 
   return (
     <>
-        <Shell title={"DashBoard"}>
-          <Coin/>
-          <Rocket/>
-          {/* Hi There!
-          <Timeline events={timelineevents}/>
-          <Table columns={columns} rows={rows} />
-          <GridList /> */}
+        <Shell title={"Transactions"}>
+            <div className='pt-6'>
+              <div className='pb-12'>
+                <GridList title='Last 6 Months' data={lastSixMonths} />
+              </div>
+              <h2 className="text-sm font-medium text-gray-500 mb-3">This Month</h2>
+              <Timeline events={timelineevents}/>
+            </div>
         </Shell>
     </>
   )

@@ -2,25 +2,23 @@ import { Fragment, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {
   Bars3BottomLeftIcon,
-  BellIcon,
-  CalendarIcon,
   ChartBarIcon,
   FolderIcon,
   HomeIcon,
-  InboxIcon,
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 
 import { FcHome, FcDonate, FcTimeline, FcRating } from "react-icons/fc";
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { useRouter } from 'next/router'
 
 //sidebar navigation options
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: FcHome, current: true },
-  { name: 'Leaderboard', href: '#', icon: FcRating, current: false },
-  { name: 'Transaction History', href: '#', icon: FcTimeline, current: false },
-  { name: 'Charities', href: '#', icon: FcDonate, current: false },
+  { name: 'Dashboard', href: 'dashboard', icon: FcHome },
+  { name: 'Leaderboard', href: 'leaderboard', icon: FcRating },
+  { name: 'Transactions', href: 'transactions', icon: FcTimeline },
+  { name: 'Charities', href: 'charities', icon: FcDonate },
 ]
 
 //navigation options for the user profile button.
@@ -34,9 +32,10 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Shell({ children }: any) {
+export default function Shell({ title, children }: any) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-
+  const router = useRouter();
+  console.log(router.route);
   return (
     <>
       <div>
@@ -102,7 +101,7 @@ export default function Shell({ children }: any) {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current
+                            ("/" + item.href) === router.route
                               ? 'bg-gray-100 text-gray-900'
                               : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
                             'group flex items-center px-2 py-2 text-base font-medium rounded-md'
@@ -110,7 +109,7 @@ export default function Shell({ children }: any) {
                         >
                           <item.icon
                             className={classNames(
-                              item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
+                              ("/" + item.href) === router.route ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
                               'mr-4 flex-shrink-0 h-6 w-6'
                             )}
                             aria-hidden="true"
@@ -146,23 +145,24 @@ export default function Shell({ children }: any) {
             <div className="mt-5 flex flex-grow flex-col">
               <nav className="flex-1 space-y-4 px-4 pb-4">
                 {navigation.map((item) => (
-                  <a
+                  <span
                     key={item.name}
-                    href={item.href}
+                    onClick={() => {
+                      router.push(item.href.toLocaleLowerCase())
+                    }}
                     className={classNames(
-                      item.current ? 'bg-[#E4FEF7] text-[#007F5F] border-dono-green' : 'text-gray-600 hover:bg-gray-50 hover:border-gray-50 hover:text-gray-900',
-                      'group flex items-center px-2 py-4 text-md font-bold rounded-md tracking-wide'
+                      ("/" + item.href) === router.route ? 'bg-[#E4FEF7] text-[#007F5F] border-dono-green' : 'text-gray-600 hover:bg-gray-50 hover:border-gray-50 hover:text-gray-900',
+                      'group flex items-center px-2 py-4 text-md font-bold rounded-md tracking-wide cursor-pointer'
                     )}
                   >
                     <item.icon
                       className={classNames(
-                        item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500',
                         'mr-3 flex-shrink-0 h-8 w-8'
                       )}
                       aria-hidden="true"
                     />
                     {item.name}
-                  </a>
+                  </span>
                 ))}
               </nav>
             </div>
@@ -185,7 +185,6 @@ export default function Shell({ children }: any) {
                   className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
                 {/* Profile dropdown */}
@@ -213,15 +212,17 @@ export default function Shell({ children }: any) {
                       {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
                           {({ active }) => (
-                            <a
-                              href={item.href}
+                            <span
+                              onClick={() => {
+                                router.push(item.href.toLocaleLowerCase())
+                              }}
                               className={classNames(
                                 active ? 'bg-gray-100' : '',
-                                'block px-4 py-2 text-sm text-gray-700'
+                                'block px-4 py-2 text-sm text-gray-700 cursor-pointer'
                               )}
                             >
                               {item.name}
-                            </a>
+                            </span>
                           )}
                         </Menu.Item>
                       ))}
@@ -235,7 +236,7 @@ export default function Shell({ children }: any) {
           <main className="flex-1">
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+                <h1 className="text-2xl font-semibold text-gray-900">{title}</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                 {/* Replace with your content */}

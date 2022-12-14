@@ -29,8 +29,7 @@ export default function Timeline({events}: {events: TimelineEvent[]}) {
                 <div>
                   <span
                     className={classNames(
-                      event.iconBackground,
-                      'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white'
+                      'h-8 w-8 rounded-full flex items-center justify-centers'
                     )}
                   >
                     <event.icon className="h-5 w-5 text-white" aria-hidden="true" />
