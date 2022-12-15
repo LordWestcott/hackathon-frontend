@@ -12,7 +12,8 @@ module.exports = {
     colors: {
       ...colors,
       'dono-green': '#00CD9C',
-      'dono-orange': '#ff9700'
+      'dono-orange': '#ff9700',
+      'dono-purple': '#ce82ff',
     },
     extend: {
       fontFamily: {
