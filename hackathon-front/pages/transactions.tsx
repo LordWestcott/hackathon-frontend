@@ -1,4 +1,5 @@
 import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/react/20/solid'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import GridList, { GridListItem } from '../components/gridlist'
@@ -121,3 +122,18 @@ export default function Transactions() {
     </>
   )
 }
+
+// type TransactionData = {
+//     data: any;
+// }
+
+// export const getServerSideProps: GetServerSideProps<{ data: TransactionData }> = async (context) => {
+//     const res = await fetch('https://.../data')
+//     const data: TransactionData = await res.json()
+  
+//     return {
+//       props: {
+//         data,
+//       },
+//     }
+// }

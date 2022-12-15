@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useContext, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {
   Bars3BottomLeftIcon,
@@ -7,6 +7,8 @@ import {
 
 import { FcHome, FcDonate, FcTimeline, FcRating, FcBusinessman, FcVip } from "react-icons/fc";
 import { useRouter } from 'next/router'
+import { Fire } from './rivecomponents/Fire';
+import { ProfileContext } from '../contexts/UserContext';
 
 //sidebar navigation options
 const navigation = [
@@ -31,7 +33,8 @@ function classNames(...classes: any) {
 export default function Shell({ title, children }: any) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const router = useRouter();
-  console.log(router.route);
+  const profileContext = useContext(ProfileContext);
+
   return (
     <>
       <div>
@@ -170,6 +173,10 @@ export default function Shell({ title, children }: any) {
               <span className="sr-only">Open sidebar</span>
               <Bars3BottomLeftIcon className="h-6 w-6" aria-hidden="true" />
             </button>
+            <div className='flex justify-center items-center ml-5'>
+              <Fire active={profileContext?.streakPeriodFulFilled} widthPx={40} heightPx={40} />
+              <span className='text-md font-bold'>{profileContext?.currentStreak}</span>
+            </div>
             <div className="flex flex-1 justify-end px-4">
               <div className="ml-4 flex items-center md:ml-6">
                 <button
@@ -178,7 +185,9 @@ export default function Shell({ title, children }: any) {
                 >
                   <span className="sr-only">View notifications</span>
                 </button>
-
+                <div>
+                  <span className='text-md font-bold'>{profileContext?.user}</span>
+                </div>
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
@@ -229,9 +238,7 @@ export default function Shell({ title, children }: any) {
                 <h1 className="text-2xl font-semibold text-gray-900">{title}</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                {/* Replace with your content */}
                 {children}
-                {/* /End replace */}
               </div>
             </div>
           </main>

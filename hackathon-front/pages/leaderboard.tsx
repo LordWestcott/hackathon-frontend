@@ -1,3 +1,4 @@
+import { GetServerSideProps } from "next";
 import { Fire } from "../components/rivecomponents/Fire";
 import Shell from "../components/shell";
 import Table, { TableRow } from "../components/table";
@@ -116,3 +117,18 @@ export default function Leaderboard() {
         </>
     ) 
 }
+
+// type LeaderBoardData = {
+//     data: any;
+// }
+
+// export const getServerSideProps: GetServerSideProps<{ data: LeaderBoardData }> = async (context) => {
+//     const res = await fetch('https://.../data')
+//     const data: LeaderBoardData = await res.json()
+  
+//     return {
+//       props: {
+//         data,
+//       },
+//     }
+// }

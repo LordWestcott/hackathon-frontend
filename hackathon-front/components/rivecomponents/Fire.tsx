@@ -3,7 +3,7 @@ import { useRive } from '@rive-app/react-canvas';
 
 
 
-export const Fire = ({active, heightPx, widthPx}: {active: boolean, heightPx?: number, widthPx?: number}) => {
+export const Fire = ({active=true, heightPx, widthPx}: {active?: boolean, heightPx?: number, widthPx?: number}) => {
     const {RiveComponent, rive} = useRive({
         src: '/fire_button.riv',
         autoplay: true,
