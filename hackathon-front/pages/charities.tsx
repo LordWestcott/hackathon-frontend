@@ -102,8 +102,10 @@ export default function Charities() {
     return (
         <Shell title={"Charities"}>
             <div className='pt-6'>
-                <p className="text-lg font-medium text-gray-500">Your donations so far:</p>
-                <GridList data={donationSummary} title="" />
+                <div className="mb-7">
+                    <p className="text-lg font-medium text-gray-500">Your donations so far:</p>
+                    <GridList data={donationSummary} title="" />
+                </div>
 
                 <p className="text-lg font-medium text-gray-500">Your selected charities:</p>
 

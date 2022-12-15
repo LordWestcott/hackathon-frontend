@@ -5,7 +5,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 
-import { FcHome, FcDonate, FcTimeline, FcRating, FcBusinessman } from "react-icons/fc";
+import { FcHome, FcDonate, FcTimeline, FcRating, FcBusinessman, FcVip } from "react-icons/fc";
 import { useRouter } from 'next/router'
 
 //sidebar navigation options
@@ -14,6 +14,7 @@ const navigation = [
   { name: 'Leaderboard', href: 'leaderboard', icon: FcRating },
   { name: 'Transactions', href: 'transactions', icon: FcTimeline },
   { name: 'Charities', href: 'charities', icon: FcDonate },
+  { name: 'Rewards', href: 'rewards', icon: FcVip },
 ]
 
 //navigation options for the user profile button.
