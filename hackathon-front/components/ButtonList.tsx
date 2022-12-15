@@ -4,7 +4,7 @@ export type ButtonListProps = {
     title: string
     data: ButtonListItem[];
     isSaveable?: boolean;
-    buttonCallback: () => void
+    buttonCallback?: () => void
     buttonText?: string
 };
 
