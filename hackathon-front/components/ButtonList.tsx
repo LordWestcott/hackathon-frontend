@@ -4,7 +4,7 @@ export type ButtonListProps = {
     title: string
     data: ButtonListItem[];
     isSaveable?: boolean;
-    buttonCallback?: () => void
+    buttonCallback: () => void
     buttonText?: string
 };
 
@@ -18,7 +18,7 @@ function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function ButtonList({ title, data, isSaveable=true, buttonCallback, buttonText }: ButtonListProps) {
+export default function ButtonList({ title, data, isSaveable=true, buttonCallback=()=>{}, buttonText }: ButtonListProps) {
     const [selectedItems, setSelectedItems] = useState<string[]>([])
     
     const onClickCallback = (id: string, isActive: boolean) => {
