@@ -1,3 +1,4 @@
+import { GetServerSideProps } from "next";
 import ButtonList from "../components/ButtonList";
 import Shell from "../components/shell";
 
@@ -48,5 +49,19 @@ export default function Rewards() {
             </Shell>
         </>
     )
-
 }
+
+// type RewardsData = {
+//     data: any;
+// }
+
+// export const getServerSideProps: GetServerSideProps<{ data: RewardsData }> = async (context) => {
+//     const res = await fetch('https://.../data')
+//     const data: RewardsData = await res.json()
+  
+//     return {
+//       props: {
+//         data,
+//       },
+//     }
+// }
