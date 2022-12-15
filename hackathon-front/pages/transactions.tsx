@@ -8,7 +8,11 @@ import Shell from '../components/shell'
 import Table, { TableRow } from '../components/table'
 import Timeline from '../components/timeline'
 
-export default function Home() {
+export default function Transactions() {
+
+    //todo: create timeline events from api
+    // map transaction to content,
+    // map donated amount to target.
 
   const timelineevents = [
     {
