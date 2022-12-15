@@ -8,56 +8,60 @@ import Shell from '../components/shell'
 import Table, { TableRow } from '../components/table'
 import Timeline from '../components/timeline'
 
-export default function Home() {
+export default function Transactions() {
+
+    //todo: create timeline events from api
+    // map transaction to content,
+    // map donated amount to target.
 
   const timelineevents = [
     {
       id: 1,
-      content: 'Applied to',
-      target: 'Front End Developer',
+      content: 'Spent £5.79, donating: ',
+      target: '£0.21',
       href: '#',
-      date: 'Sep 20',
-      datetime: '2020-09-20',
+      date: 'Dec 5',
+      datetime: '2021-12-05',
       icon: Coin,
       iconBackground: 'bg-gray-400',
     },
     {
       id: 2,
-      content: 'Advanced to phone screening by',
-      target: 'Bethany Blake',
+      content: 'Spent £105.24, donating: ',
+      target: '£0.76',
       href: '#',
-      date: 'Sep 22',
-      datetime: '2020-09-22',
+      date: 'Dec 12',
+      datetime: '2021-12-12',
       icon: Coin,
       iconBackground: 'bg-blue-500',
     },
     {
       id: 3,
-      content: 'Completed phone screening with',
-      target: 'Martha Gardner',
+      content: 'Spent £12.35, donating: ',
+      target: '£0.65',
       href: '#',
-      date: 'Sep 28',
-      datetime: '2020-09-28',
+      date: 'Dec 14',
+      datetime: '2021-12-14',
       icon: Coin,
       iconBackground: 'bg-green-500',
     },
     {
       id: 4,
-      content: 'Advanced to interview by',
-      target: 'Bethany Blake',
+      content: 'Spent £9.99, donating: ',
+      target: '£0.01',
       href: '#',
-      date: 'Sep 30',
-      datetime: '2020-09-30',
+      date: 'Dec 15',
+      datetime: '2021-12-15',
       icon: Coin,
       iconBackground: 'bg-blue-500',
     },
     {
       id: 5,
-      content: 'Completed interview with',
-      target: 'Katherine Snyder',
+      content: 'Spent £3.20, donating: ',
+      target: '£0.80',
       href: '#',
-      date: 'Oct 4',
-      datetime: '2020-10-04',
+      date: 'Dec 15',
+      datetime: '2021-12-15',
       icon: Coin,
       iconBackground: 'bg-green-500',
     },
@@ -111,7 +115,7 @@ export default function Home() {
                 <GridList title='Last 6 Months' data={lastSixMonths} />
               </div>
               <h2 className="text-sm font-medium text-gray-500 mb-3">This Month</h2>
-              <Timeline events={timelineevents}/>
+              <Timeline events={timelineevents.reverse()}/>
             </div>
         </Shell>
     </>
