@@ -4,6 +4,8 @@ export type ButtonListProps = {
     title: string
     data: ButtonListItem[];
     isSaveable?: boolean;
+    buttonCallback?: () => void
+    buttonText?: string
 };
 
 export type ButtonListItem = {
@@ -16,8 +18,8 @@ function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function ButtonList({ title, data, isSaveable=true }: ButtonListProps) {
-    const [selectedItems, setSelectedItems] = useState(['trusselTrust', 'stJohnAmublance', 'britishRedCross'])
+export default function ButtonList({ title, data, isSaveable=true, buttonCallback, buttonText }: ButtonListProps) {
+    const [selectedItems, setSelectedItems] = useState<string[]>([])
     
     const onClickCallback = (id: string, isActive: boolean) => {
         if (isActive) {
@@ -32,8 +34,9 @@ export default function ButtonList({ title, data, isSaveable=true }: ButtonListP
     }
 
     return (
-        <div>
-            <h2 className="text-lg font-medium text-gray-500">{title}</h2>
+        <div className="flex items-center flex-col">
+            <h2 className="text-2xl font-bold mb-4 text-gray-500">{title}</h2>
+            <div>
             <ul role="list" className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 mb-4 max-w-3xl">
                 {data.map((item, i) => {
                     const isActive = selectedItems.includes(item.id)
@@ -56,9 +59,11 @@ export default function ButtonList({ title, data, isSaveable=true }: ButtonListP
             </ul>
             {isSaveable &&
                 <div className="flex justify-end mt-5">
-                    <button className="btn-primary">Save changes</button>
+                    <button onClick={() => buttonCallback()} className="btn-primary">{buttonText}</button>
                 </div>
             }
+            </div>
+
         </div>
     )
 }

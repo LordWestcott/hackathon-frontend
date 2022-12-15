@@ -3,44 +3,6 @@ import GridList from "../components/gridlist";
 import Shell from "../components/shell";
 
 export default function Charities() {
-    const charities = [
-    {
-        id: 'macmillan',
-        logo: '/macmillan.png',
-    },
-    {
-        id: 'trusselTrust',
-        logo: '/trusseltrust.png',
-    },
-    {
-        id: 'waterAid',
-        logo: '/wateraid.png',
-    },
-    {
-        id: 'britishHeartFoundation',
-        logo: '/bhf.png',
-    },
-    {
-        id: 'cancerResearch',
-        logo: '/cancerresearch.png',
-    },
-    {
-        id: 'stJohnAmublance',
-        logo: '/sja.png',
-    },
-    {
-        id: 'britishRedCross',
-        logo: '/redcross.png',
-    },
-    {
-        id: 'alzheimersResearchUk',
-        logo: '/alzheimers.png',
-    },
-    {
-        id: 'nspcc',
-        logo: '/nspcc.png',
-    }
-    ]
 
     const donationSummary = [    {
         title: 'Macmillan',
@@ -108,11 +70,6 @@ export default function Charities() {
                 </div>
 
                 <p className="text-lg font-medium text-gray-500">Your selected charities:</p>
-
-
-                <div className='pb-12 flex justify-center items-center'>
-                    <ButtonList title='Select up to 3 charities to donate to:' data={charities} />
-                </div>
             </div>
         </Shell>
     )

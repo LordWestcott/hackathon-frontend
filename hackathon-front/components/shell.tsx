@@ -31,7 +31,7 @@ function classNames(...classes: any) {
 export default function Shell({ title, children }: any) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const router = useRouter();
-  console.log(router.route);
+
   return (
     <>
       <div>
