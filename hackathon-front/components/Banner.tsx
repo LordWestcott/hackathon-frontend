@@ -25,7 +25,7 @@ export const Banner = ({ color, title, subtitle, buttonText }: BannerTypes) => {
                             <p className="text-xl mb-2 font-bold text-white">{title}</p>
                             <p className="text-md font-semibold text-white">{subtitle}</p>
                         </div>
-                        <button className="btn-primary border-t-[#cc7903] border-x-[#cc7903]">{buttonText}</button>
+                        <button className="btn-secondary border-t-[#cc7903] border-x-[#cc7903]">{buttonText}</button>
                     </div>
                 )
             }
@@ -36,7 +36,7 @@ export const Banner = ({ color, title, subtitle, buttonText }: BannerTypes) => {
                             <p className="text-xl mb-2 font-bold text-white">{title}</p>
                             <p className="text-md font-semibold text-white">{subtitle}</p>
                         </div>
-                        <button className="btn-primary border-t-[#a568cc] border-x-[#a568cc]">{buttonText}</button>
+                        <button className="btn-tertiary border-t-[#a568cc] border-x-[#a568cc]">{buttonText}</button>
                     </div>
                 )
             }
