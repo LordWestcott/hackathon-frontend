@@ -5,7 +5,7 @@ export type TableShape = {
 export type TableRow = TableData[];
 
 export type TableData = {
-    data: string;
+    data: any;
     isBold: boolean;
 }
 

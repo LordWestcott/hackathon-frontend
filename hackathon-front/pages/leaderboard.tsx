@@ -1,3 +1,4 @@
+import { Fire } from "../components/rivecomponents/Fire";
 import Shell from "../components/shell";
 import Table, { TableRow } from "../components/table";
 
@@ -6,80 +7,103 @@ export default function Leaderboard() {
     //todo: map table from API call.
 
     const columns = [
-        'Col1',
-        'Col2',
-        'Col3',
-        'Col4',
-        'Col5',
+        'User',
+        'Current Streak',
+        'Longest Streak',
+        'Total Donated',
+        '',
       ]
     
       const rows: TableRow[] = [
         [
           {
-            data: "One",
+            data: "Olly F...",
             isBold: true,
           },
           {
-            data: "Two",
+            data: "11 Days",
             isBold: false,
           },
           {
-            data: "Three",
+            data: "55 Days",
             isBold: false,
           },
           {
-            data: "Four",
-            isBold: false,
+            data: "£121.52",
+            isBold: true,
           },
           {
-            data: "Five",
+            data: <Fire active={false} widthPx={30} heightPx={30}/>,
             isBold: false,
           },
         ],
         [
-          {
-            data: "One",
-            isBold: true,
-          },
-          {
-            data: "Two",
-            isBold: false,
-          },
-          {
-            data: "Three",
-            isBold: false,
-          },
-          {
-            data: "Four",
-            isBold: false,
-          },
-          {
-            data: "Five",
-            isBold: false,
-          },
-        ],
-        [
-          {
-            data: "One",
-            isBold: true,
-          },
-          {
-            data: "Two",
-            isBold: false,
-          },
-          {
-            data: "Three",
-            isBold: false,
-          },
-          {
-            data: "Four",
-            isBold: false,
-          },
-          {
-            data: "Five",
-            isBold: false,
-          },
-        ],
+            {
+              data: "Catherine M...",
+              isBold: true,
+            },
+            {
+              data: "11 Days",
+              isBold: false,
+            },
+            {
+              data: "55 Days",
+              isBold: false,
+            },
+            {
+              data: "£121.52",
+              isBold: true,
+            },
+            {
+              data: <Fire active={true} widthPx={30} heightPx={30}/>,
+              isBold: false,
+            },
+          ],
+          [
+            {
+              data: "Alex H...",
+              isBold: true,
+            },
+            {
+              data: "11 Days",
+              isBold: false,
+            },
+            {
+              data: "55 Days",
+              isBold: false,
+            },
+            {
+              data: "£121.52",
+              isBold: true,
+            },
+            {
+              data: <Fire active={true} widthPx={30} heightPx={30}/>,
+              isBold: false,
+            },
+          ],
+          [
+            {
+              data: "Louis P...",
+              isBold: true,
+            },
+            {
+              data: "11 Days",
+              isBold: false,
+            },
+            {
+              data: "55 Days",
+              isBold: false,
+            },
+            {
+              data: "£121.52",
+              isBold: true,
+            },
+            {
+              data: <Fire active={false} widthPx={30} heightPx={30}/>,
+              isBold: false,
+            },
+          ],
+        
     
       ]
     
