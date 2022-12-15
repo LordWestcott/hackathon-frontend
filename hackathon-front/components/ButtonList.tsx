@@ -21,8 +21,8 @@ export default function ButtonList({ title, data, isSaveable=true }: ButtonListP
     
     const onClickCallback = (id: string, isActive: boolean) => {
         if (isActive) {
-            const filterCharities = selectedItems.filter(charity => charity !== id);
-            setSelectedItems(filterCharities)
+            const filterItems = selectedItems.filter(item => item !== id);
+            setSelectedItems(filterItems)
         }
 
         if (selectedItems.length < 3) {
