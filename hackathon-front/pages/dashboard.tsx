@@ -1,6 +1,8 @@
 import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/react/20/solid'
 import Head from 'next/head'
 import Image from 'next/image'
+import { Badges } from '../components/Badges'
+import { Banner } from '../components/Banner'
 import GridList from '../components/gridlist'
 import { Coin } from '../components/rivecomponents/Coin'
 import { Rocket } from '../components/rivecomponents/Rocket'
@@ -67,9 +69,9 @@ export default function Home() {
 
   return (
     <>
-        <Shell title={"DashBoard"}>
-          <Coin/>
-          <Rocket/>
+        <Shell title={"Welcome!"}>
+          <Badges />
+          <Banner title="Make a Donation" subtitle='Make a one-off donation to one of your charities to keep your streak!' color="green" buttonText='Donate Now' />
           {/* Hi There!
           <Timeline events={timelineevents}/>
           <Table columns={columns} rows={rows} />
