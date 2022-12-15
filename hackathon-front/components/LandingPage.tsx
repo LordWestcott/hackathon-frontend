@@ -20,7 +20,7 @@ export const LandingPage = () => {
                             <p className="text-2xl align-center text-center font-semibold text-white">The easiest way to round up your payments and donate to charity!</p>
                         </div>
                         <div className="flex flex-col gap-4 w-full max-w-xs mx-auto text-center">
-                            <Link href="/dashboard" className="btn-secondary" type="button">Get Started</Link>
+                            <Link href="/selectCharities" className="btn-secondary" type="button">Get Started</Link>
                             <Link href="/dashboard" className="btn-primary border-t-[#0ba47d] border-x-[#0ba47d]" type="button">I already have an account</Link>
                         </div>
                     </div>
